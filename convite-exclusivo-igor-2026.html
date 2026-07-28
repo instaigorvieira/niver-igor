@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversário do Igor</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Adicionamos o "autoplay" aqui dentro -->
+    <audio id="background-music" src="assets/audio/musica.mp3" autoplay loop></audio>
+
+    <div id="background">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
+        <div class="floating-icons">
+            <span>🌈</span><span>☀️</span><span>⭐</span><span>🌸</span>
+        </div>
+    </div>
+
+    <section id="welcome">
+        <div class="glass">
+            <h3>✨ Você foi convidado(a)! ✨</h3>
+            <h3>Para</h3>
+            <h1>Meu Aniversário</h1>
+            <p>Venha celebrar comigo a noite mais latina de todos os tempos.</p>
+            <button id="openInvite">Abrir Convite</button>
+        </div>
+    </section>
+
+    <section id="invite" class="hidden">
+        <div class="card">
+            <h1>🎂</h1>
+            <h2>Aniversário do Igor</h2>
+            <div class="line"></div>
+            
+            <div class="info">
+                <div class="item">
+                    <h4>📅 Data</h4>
+                    <p>14 de Agosto de 2026</p>
+                </div>
+                <div class="item">
+                    <h4>🕢 Horário</h4>
+                    <p>19h00</p>
+                </div>
+                <div class="item">
+                    <h4>📍 Local</h4>
+                    <p>Tropicanos</p>
+                    <p>R. João Carvalho, 785<br>Aldeota<br>Fortaleza - CE</p>
+                </div>
+            </div>
+
+            <div id="countdown">
+                <div><span id="days">00</span><small>Dias</small></div>
+                <div><span id="hours">00</span><small>Horas</small></div>
+                <div><span id="minutes">00</span><small>Min</small></div>
+                <div><span id="seconds">00</span><small>Seg</small></div>
+            </div>
+
+            <div class="buttons">
+                <a class="btn whatsapp" href="https://wa.me/5585985005743?text=Oi%20Igor!%20Confirmo%20minha%20presen%C3%A7a%20no%20seu%20anivers%C3%A1rio!%20%F0%9F%8E%89" target="_blank">💚 Confirmar presença</a>
+                <a class="btn maps" href="https://www.google.com/maps/search/?api=1&query=Tropicanos+R.+Joao+Carvalho+785+Aldeota+Fortaleza" target="_blank">📍 Como chegar</a>
+                <button class="btn surprise" id="surprise">🎉 Recado especial</button>
+                <button class="btn calendar" id="calendar">📅 Adicionar ao calendário</button>
+            </div>
+            
+            <p class="footer">Espero você para comemorarmos juntos! 💖</p>
+        </div>
+    </section>
+
+    <canvas id="confetti"></canvas>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+    font-family: 'Baloo 2', cursive;
+    background: #fff6f8;
+    overflow: hidden; /* Evita rolagens indesejadas */
+}
+
+body {
+     background-image: url("C:\\Users\\ander\\Downloads\\ChatGPT Image 28 de jul. de 2026, 18_56_48.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffe7f5, #fff6b8, #dffbf3, #d8e9ff, #ffe9d5);
+    background-size: 300% 300%;
+    animation: bgMove 15s ease infinite;
+    z-index: -2;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: .45;
+    animation: floatBlob 15s infinite ease-in-out;
+}
+
+.blob1 { width: 250px; height: 250px; background: #ff8fc8; top: -50px; left: -50px; }
+.blob2 { width: 300px; height: 300px; background: #92f5dd; right: -80px; bottom: -80px; animation-delay: 4s; }
+.blob3 { width: 200px; height: 200px; background: #ffe56b; left: 50%; top: 35%; transform: translateX(-50%); animation-delay: 2s; }
+
+@keyframes floatBlob {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+}
+
+#welcome, #invite {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glass, .card {
+    width: 100%;
+    max-width: 400px;
+    max-height: 96vh; /* Restringe o tamanho máximo à tela do celular */
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 30px;
+    padding: 20px 18px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    animation: fadeUp 0.8s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui o espaço igualmente */
+    overflow-y: auto; /* Caso o celular seja extremamente pequeno, permite rolar sutilmente por segurança */
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: none; }
+}
+
+.card h1 { font-size: 38px; line-height: 1; margin-bottom: 2px; }
+
+h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #000000;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);    
+    -webkit-background-clip: text;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+h3 { font-size: 18px; color: #000000; margin-bottom: 3px; }
+p { font-size: 14px; line-height: 1.4; color: #5d5d5d; }
+
+.line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff74b6, #ffd84c, #5de4b2);
+    margin: 8px auto;
+    border-radius: 50px;
+}
+
+/* COMPACTAÇÃO DAS INFORMAÇÕES (Mudança chave para caber na tela) */
+.info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Coloca Data e Horário lado a lado */
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.item {
+    background: rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 10px 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* Faz o Local ocupar as duas colunas na parte de baixo, economizando espaço */
+.item:nth-child(3) {
+    grid-column: span 2;
+    padding: 10px;
+}
+
+.item h4 { font-size: 15px; color: #000000; margin-bottom: 2px; }
+.item p { font-size: 13px; line-height: 1.3; }
+
+/* CONTADOR COMPACTO */
+#countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin: 10px 0;
+}
+
+#countdown div {
+    background: white;
+    padding: 8px 2px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+#countdown span { font-size: 20px; font-weight: 800; display: block; color: #f35314; line-height: 1; }
+small { font-size: 10px; color: #777; }
+
+/* BOTÕES OTIMIZADOS */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.btn {
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: .2s;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.whatsapp { background: #25D366; }
+.maps { background: #4e87ff; }
+.calendar { background: #ff7f50; }
+.surprise { background: #dbc603; }
+
+.footer { margin-top: 12px; font-size: 15px; font-weight: 700; color: #000000; }
+
+#openInvite {
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+    padding: 14px 35px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #e61b1b, #ffd75c);
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 8px 20px rgba(255, 110, 180, 0.3);
+}
+
+.floating-icons { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.floating-icons span { position: absolute; font-size: 22px; animation: floatIcon linear infinite; }
+.floating-icons span:nth-child(1) { left: 6%; top: 15%; animation-duration: 12s; }
+.floating-icons span:nth-child(2) { right: 6%; top: 12%; animation-duration: 14s; }
+.floating-icons span:nth-child(3) { left: 8%; bottom: 15%; animation-duration: 15s; }
+.floating-icons span:nth-child(4) { right: 8%; bottom: 12%; animation-duration: 18s; }
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(6deg); }
+}
+
+canvas { position: fixed; inset: 0; pointer-events: none; z-index: 999; }
+
+/* AJUSTES PARA CELULARES EXTREMAMENTE PEQUENOS */
+@media (max-height: 680px) {
+    .card h1 { font-size: 30px; }
+    h2 { font-size: 22px; }
+    .item { padding: 6px 4px; }
+    .item h4 { font-size: 13px; }
+    .item p { font-size: 11px; }
+    #countdown span { font-size: 18px; }
+    .btn { padding: 10px; font-size: 14px; }
+}
